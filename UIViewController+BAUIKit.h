@@ -1,5 +1,5 @@
 //
-//  UIViewController+SKSideMenu.h
+//  UIViewController+BAUIKit.h
 //  BAUIKit
 //
 //  The MIT License (MIT)
