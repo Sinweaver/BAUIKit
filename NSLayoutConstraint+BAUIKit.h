@@ -1,5 +1,5 @@
 //
-//  UIViewController+BAUIKit.h
+//  NSLayoutConstraint+BAUIKit.h
 //  BAUIKit
 //
 //  The MIT License (MIT)
@@ -27,12 +27,21 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIViewController (BAUIKit)
+@interface NSLayoutConstraint (BAUIKit)
 
-- (IBAction)presentLeftMenuViewController:(id)sender;
++ (nonnull NSArray *)constraintsWithFormatArray:(nonnull NSArray *)formatArray
+                                        options:(NSLayoutFormatOptions)opts
+                                        metrics:(nullable NSDictionary *)metrics
+                                          views:(nonnull NSDictionary *)views;
 
-- (IBAction)presentRightMenuViewController:(id)sender;
++ (nonnull NSLayoutConstraint *)constraintsCenterX:(nonnull id)view
+                                            toItem:(nullable id)view2
+                                        multiplier:(CGFloat)multiplier
+                                          constant:(CGFloat)constant;
 
-- (void)setBackButtonWithImage:(nullable UIImage *)image;
++ (nonnull NSLayoutConstraint *)constraintsCenterY:(nonnull id)view
+                                            toItem:(nullable id)view2
+                                        multiplier:(CGFloat)multiplier
+                                          constant:(CGFloat)constant;
 
 @end

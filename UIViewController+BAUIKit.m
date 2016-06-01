@@ -59,4 +59,17 @@
     [sideMenu showHideRightViewAnimated:YES completionHandler:nil];
 }
 
+- (void)setBackButtonWithImage:(nullable UIImage *)image {
+    // Replace the default back button
+    NSArray *viewControllerArray = [self.navigationController viewControllers];
+    if ([viewControllerArray indexOfObject:self] > 0) {
+        UIBarButtonItem *backButton =
+        [[UIBarButtonItem alloc] initWithImage:image
+                                         style:UIBarButtonItemStylePlain
+                                        target:self.navigationController
+                                        action:@selector(popViewControllerAnimated:)];
+        self.navigationItem.leftBarButtonItem = backButton;
+    }
+}
+
 @end
